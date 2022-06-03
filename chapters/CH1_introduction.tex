@@ -1,0 +1,41 @@
+\documentclass[crop=false,12pt,class=report]{standalone}
+\doublespacing
+
+\begin{document}
+\begin{refsection}
+\begin{doublespacing}
+
+\chapter[CHAPTER 1 TITLE]{CHAPTER 1 TITLE\protect\footnotemark}
+
+\footnotetext{Portions of this chapter appear as an article in JOURNAL. The original citation is as follows: CITATION.}
+
+\section{First section}
+\lipsum[1-4]
+
+Citations look like this \cite{hanahan2011hallmarks,jain2001normalizing}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.67\textwidth]{example-image-a}
+    \caption[Caption that appears in the table of contents.]{Caption that appears in the text.}
+    \label{ch1_fig1}
+\end{figure}
+
+\section{Second section}
+\subsection{Subsection}
+\lipsum[5-8]
+\subsection{Another subsection}
+\lipsum[9-10]
+
+% References below
+\newpage
+\begin{singlespace}
+{
+\titlespacing{\chapter}{0pt}{0in}{12pt}
+\printbibliography[title=REFERENCES,heading=bibintoc]
+}
+\end{singlespace}
+
+\end{doublespacing}
+\end{refsection}
+\end{document}

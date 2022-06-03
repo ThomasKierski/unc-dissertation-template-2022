@@ -1,0 +1,104 @@
+% Table of contents title
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\cfttoctitlefont}{\hfill\normalfont\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill~}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftaftertoctitleskip}{12pt}
+\renewcommand{\cftbeforetoctitleskip}{1in}
+
+% List of figures title
+\renewcommand{\cftloftitlefont}{\hfill\normalfont\bfseries\MakeUppercase}
+\renewcommand{\cftafterloftitle}{\hfill~}
+\renewcommand{\cftafterloftitleskip}{12pt}
+\renewcommand{\cftbeforeloftitleskip}{0pt}
+
+% List of tables title
+\renewcommand{\cftlottitlefont}{\hfill\normalfont\bfseries\MakeUppercase}
+\renewcommand{\cftafterlottitle}{\hfill~}
+\renewcommand{\cftafterlottitleskip}{12pt}
+\renewcommand{\cftbeforelottitleskip}{0pt}
+
+% format chapter entries like other entries
+\renewcommand{\cftchapfont}{\normalfont\uppercase{}}
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% Getting rid of the leading section numbers on the left and then setting the size of the number box to 0 so that the indentation is correct
+\setlength{\cftsecnumwidth}{0pt}
+\makeatletter
+\renewcommand{\cftsecpresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftsecaftersnum}{\end{lrbox}}
+\makeatother
+
+% Same thing for subsection
+\setlength{\cftsubsecnumwidth}{0pt}
+\makeatletter
+\renewcommand{\cftsubsecpresnum}{\begin{lrbox}{\@tempboxa}}
+\renewcommand{\cftsubsecaftersnum}{\end{lrbox}}
+\makeatother
+
+% Chapters must be all caps and titles must be preceded by "CHAPTER X:", where X is the chapter number
+\renewcommand{\cftchappresnum}{CHAPTER }
+\renewcommand{\cftchapaftersnum}{:}
+\newlength{\mylen} % a "scratch" length
+\settowidth{\mylen}{\bfseries\cftchappresnum\cftchapaftersnum} % extra space
+\addtolength{\cftchapnumwidth}{0.85\mylen} % add the extra space
+
+% Figure left side stuff
+\renewcommand{\cftfigpresnum}{Figure }
+\renewcommand{\cftfigaftersnum}{ - }
+\settowidth{\mylen}{\bfseries\cftfigpresnum\cftfigaftersnum} % extra space
+\addtolength{\cftfignumwidth}{0.75\mylen} % add the extra space
+
+% Table left side stuff
+\renewcommand{\cfttabpresnum}{Table }
+\renewcommand{\cfttabaftersnum}{ - }
+\settowidth{\mylen}{\bfseries\cfttabpresnum\cfttabaftersnum} % extra space
+\addtolength{\cfttabnumwidth}{0.7\mylen} % add the extra space
+
+% Setting the line spacing between entries for TOC and LOF/T
+\setlength{\cftbeforechapskip}{24pt}
+\setlength{\cftbeforesecskip}{24pt}
+\setlength{\cftbeforesubsecskip}{24pt}
+\setlength{\cftbeforesubsubsecskip}{24pt}
+\setlength{\cftbeforefigskip}{24pt}
+\setlength{\cftbeforetabskip}{24pt}
+% % \renewcommand*{\addvspace}[1]{}
+
+% \cftsetrmarg{7.5em}
+\cftsetrmarg{11em}
+
+% ^^ something above is breaking the line spacing of "REFERENCES" sections from biblatex
+
+%%%%%% Actual lists and table of contents below %%%%%%%
+\newgeometry{top=1in,bottom=1in,left=1in,right=1in,footskip=0.5in}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\textnormal{LIST OF FIGURES}}
+\begin{singlespace}
+{
+\renewcommand*{\addvspace}[1]{}
+\listoffigures
+}
+    % \listoffigures
+\end{singlespace}
+\newpage
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\textnormal{LIST OF TABLES}}
+\begin{singlespace}
+{
+\renewcommand*{\addvspace}[1]{}
+\listoftables
+}
+    % \listoftables
+\end{singlespace}
+\newpage
+
+% \vspace{0in} \ \\
+% \vspace{2in} \ \\
+\begin{singlespace}
+    \tableofcontents
+\end{singlespace}
+\restoregeometry

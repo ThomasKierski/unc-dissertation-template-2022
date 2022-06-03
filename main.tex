@@ -1,0 +1,50 @@
+\documentclass[12pt]{report}
+\usepackage{unc}
+
+\begin{document}
+%%%%%% Front matter %%%%%%%
+\pagenumbering{roman}
+
+\import{chapters/}{01_title_page.tex}
+
+\newpage
+\import{chapters/}{02_copyright_page.tex}
+
+\newpage
+\import{chapters/}{03_abstract_page.tex}
+
+\newpage 
+\import{chapters/}{04_dedication_page.tex}
+
+\newpage
+\import{chapters/}{05_contents.tex}
+
+%%%%%%% Main matter %%%%%%
+\newgeometry{top=1in, left=1in, right=1in, bottom=1in, footskip=0.5in}
+
+% Add more chapters as desired, just make sure that each chapter has its own .tex file with the proper header (just copy and paste the top of the example chapters into a new file).
+
+\newpage
+\pagenumbering{arabic}
+\import{chapters/}{CH1_introduction.tex}
+
+\newpage
+\import{chapters/}{CH2.tex}
+
+\newpage
+\import{chapters/}{CH3_conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% If you would like to place a single references section at the end of the dissertation, uncomment the following lines and remove the refsection environment and \printbibliography commands from each chapter.
+
+% \newpage
+% \begin{singlespace}
+% {
+% \titlespacing{\chapter}{0pt}{0in}{12pt}
+% \printbibliography[title=REFERENCES,heading=bibintoc]
+% }
+% \end{singlespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\restoregeometry
+\end{document} 

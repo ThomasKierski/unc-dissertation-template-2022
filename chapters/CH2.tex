@@ -1,0 +1,61 @@
+\documentclass[crop=false,12pt,class=report]{standalone}
+\doublespacing
+
+\begin{document}
+\begin{refsection}
+\begin{doublespacing}
+
+\chapter{CHAPTER 2 TITLE}
+
+\section{First section}
+\lipsum[11-14]
+
+Citations look like this \cite{Errico2015}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.67\textwidth]{example-grid-100x100pt}
+    \caption[Caption that appears in the table of contents.]{Caption that appears in the text.}
+    \label{ch2_fig1}
+\end{figure}
+
+\section{Second section}
+\subsection{Subsection}
+\lipsum[15-18]
+
+\begin{table}[t]
+    \centering
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{lllll}
+    \toprule
+        Tissue & $B/A$ & $c_0$ (m$\cdot$s\textsuperscript{-1}) & $\rho$ (kg$\cdot$m\textsuperscript{-3}) & $\alpha$ (dB$\cdot$cm\textsuperscript{-1}$\cdot$MHz\textsuperscript{-1})\\
+    \midrule
+        Fat & 9.6 & 1479 & 0.937 & 0.40\\
+        Connective & 8.0 & 1613 & 1.120 & 0.68\\
+        Muscle & 8.0 & 1550 & 1.070 & 0.15\\
+        Blood & 5.0 & 1520 & 1000 & 0.01\\
+        Organ & 7.6 & 1570 & 1.064 & 0.50\\
+    \bottomrule
+    \end{tabular}
+    \caption{Acoustic properties of various tissues.}
+    \label{example_table}
+\end{table}
+
+\subsection{Another subsection}
+\lipsum[19-20]
+
+% References below
+\newpage
+\begin{singlespace}
+{
+\titlespacing{\chapter}{0pt}{0in}{12pt}
+\printbibliography[title=REFERENCES,heading=bibintoc]
+}
+\end{singlespace}
+
+\end{doublespacing}
+\end{refsection}
+\end{document}
+
+
+

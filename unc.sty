@@ -1,0 +1,110 @@
+\ProvidesPackage{unc}
+
+% High-level
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % times new roman
+
+% Layout
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage[hang,flushmargin]{footmisc}
+\geometry{
+letterpaper,
+top=2in,
+left=1in,
+right=1in,
+bottom=1in,
+footskip=0.5in
+}
+
+% Title and section formatting
+\titleformat{\chapter}[block]{\bfseries\filcenter}{CHAPTER \thechapter:}{0.5em}{}[]
+\titleformat{\section}[block]{\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}[block]{\itshape}{\thesubsection}{0.5em}{}[]
+\titlespacing{\chapter}{0pt}{1in}{12pt}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+\newcommand{\mytitle}{The Title of the Dissertation is set on line 36 of unc.sty}
+% Footnote line length
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width 2in height 0.5pt
+  \kern 2.5pt
+}
+
+% Set paragraph indent length
+\setlength\parindent{0.5in}
+
+% Citation style
+\usepackage[
+backend=biber,
+style=ieee,
+sorting=none,
+doi=false,isbn=false,url=false,eprint=false
+]{biblatex}
+\addbibresource{cite.bib}
+\setlength\bibitemsep{\baselineskip}
+
+% Figures
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{ {./images/} }
+\usepackage{grffile}
+\usepackage{subcaption}
+\usepackage{epsfig}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{mwe}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{stackengine}
+\usepackage{tablefootnote}
+\usepackage{tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+% Algorithms
+\usepackage[boxed,longend]{algorithm2e}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nccmath}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Typography
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{textcomp}
+
+% Macro support
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{ntheorem}
+
+% Diagrams
+\usepackage{pgf}
+\usepackage{tikz} % extensive form game trees
+\usetikzlibrary{calc} % calculating TikZ coordinates
+\usetikzlibrary{arrows.meta} % arrows for theory diagrams
+\usetikzlibrary{trees}
+
+% PDF links
+\usepackage[hidelinks]{hyperref} % backref=page 
+
+% Misc. 
+\usepackage{lipsum}

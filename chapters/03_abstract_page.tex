@@ -1,0 +1,28 @@
+\documentclass[crop=false,12pt,class=report]{standalone}
+\usepackage{import}
+
+\newgeometry{
+    top=2in,
+    left=1in,
+    right=1in,
+    bottom=1in,
+    footskip=0.5in
+    }
+    
+\begin{document}
+
+\begin{center}
+    \textbf{\uppercase{abstract}}
+    \begin{singlespacing}
+        {\color{red} YOUR NAME HERE}: \mytitle\\
+        (Under the direction of {\color{red} PI NAME HERE})\\
+    \end{singlespacing}
+    \end{center}
+
+\begin{doublespacing}
+    \lipsum[1-3]
+\end{doublespacing}
+
+\setcounter{page}{3}
+\restoregeometry
+\end{document}

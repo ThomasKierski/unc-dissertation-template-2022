@@ -1,0 +1,51 @@
+\documentclass[crop=false,12pt,class=report]{standalone}
+% \usepackage{import}
+% \usepackage{geometry}
+\newgeometry{
+    top=2in,
+    left=1in,
+    right=1in,
+    bottom=0.1in
+    }
+
+\begin{document}
+\begin{singlespacing}
+\begin{center}
+        % Title below
+        % \uppercase{The title of my dissertation}
+        \MakeUppercase{\mytitle}
+        
+        % Name below
+        \vspace{1in}
+        {\color{red}
+        YOUR NAME HERE
+        }
+        
+        % Statement below
+        \vspace{1in}
+        A dissertation submitted to the faculty at the University of North Carolina at Chapel Hill in partial fulfillment of the requirements for the degree of Doctor of Philosophy in the Department of {\color{red} DEPARTMENT}.
+        
+        % Location and year below
+        \vspace{1in}
+        Chapel Hill\\
+        2022
+    \end{center}
+    
+    % Committee members below
+    \vspace{1in}
+    {
+    \renewcommand{\arraystretch}{1.5}
+    \hfill \begin{tabular}{l}
+        Approved by:\\
+        The first committee member\\
+        The second committee member\\
+        The third committee member\\
+        The fourth committee member\\
+        Last but not least
+    \end{tabular}
+    }
+\end{singlespacing}    
+\thispagestyle{empty} % drops the page number from title page
+% \newpage
+\restoregeometry
+\end{document}
